@@ -1,0 +1,361 @@
+[2024-11-09 18:21:51 +0100] [5492] [INFO] Starting gunicorn 23.0.0
+[2024-11-09 18:21:51 +0100] [5492] [INFO] Listening at: http://0.0.0.0:4000 (5492)
+[2024-11-09 18:21:51 +0100] [5492] [INFO] Using worker: sync
+[2024-11-09 18:21:51 +0100] [5493] [INFO] Booting worker with pid: 5493
+[2024-11-09 18:22:00 +0100] [5493] [INFO] Worker exiting (pid: 5493)
+[2024-11-09 18:22:00 +0100] [5492] [INFO] Handling signal: term
+[2024-11-09 18:22:00 +0100] [5492] [ERROR] Worker (pid:5493) was sent SIGTERM!
+[2024-11-09 18:22:00 +0100] [5492] [INFO] Shutting down: Master
+[2024-11-09 18:26:23 +0100] [5520] [INFO] Starting gunicorn 23.0.0
+[2024-11-09 18:26:23 +0100] [5520] [INFO] Listening at: http://0.0.0.0:4000 (5520)
+[2024-11-09 18:26:23 +0100] [5520] [INFO] Using worker: sync
+[2024-11-09 18:26:23 +0100] [5521] [INFO] Booting worker with pid: 5521
+[2024-11-09 18:27:05 +0100] [5520] [CRITICAL] WORKER TIMEOUT (pid:5521)
+[2024-11-09 18:27:05 +0100] [5521] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2024-11-09 18:27:05 +0100] [5521] [INFO] Worker exiting (pid: 5521)
+[2024-11-09 18:27:05 +0100] [5523] [INFO] Booting worker with pid: 5523
+[2024-11-09 18:36:44 +0100] [5536] [INFO] Starting gunicorn 23.0.0
+[2024-11-09 18:36:44 +0100] [5536] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:36:44 +0100] [5536] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:36:45 +0100] [5536] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:36:45 +0100] [5536] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:36:46 +0100] [5536] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:36:46 +0100] [5536] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:36:47 +0100] [5536] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:36:47 +0100] [5536] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:36:48 +0100] [5536] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:36:48 +0100] [5536] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:36:49 +0100] [5536] [ERROR] Can't connect to ('0.0.0.0', 4000)
+[2024-11-09 18:36:58 +0100] [5540] [INFO] Starting gunicorn 23.0.0
+[2024-11-09 18:36:58 +0100] [5540] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:36:58 +0100] [5540] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:36:59 +0100] [5540] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:36:59 +0100] [5540] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:37:00 +0100] [5540] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:37:00 +0100] [5540] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:37:01 +0100] [5540] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:37:01 +0100] [5540] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:37:02 +0100] [5540] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:37:02 +0100] [5540] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:37:03 +0100] [5540] [ERROR] Can't connect to ('0.0.0.0', 4000)
+[2024-11-09 18:39:30 +0100] [5520] [CRITICAL] WORKER TIMEOUT (pid:5523)
+[2024-11-09 18:39:30 +0100] [5523] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2024-11-09 18:39:30 +0100] [5523] [INFO] Worker exiting (pid: 5523)
+[2024-11-09 18:39:30 +0100] [5547] [INFO] Booting worker with pid: 5547
+[2024-11-09 18:39:30 +0100] [5547] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1074, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1004, in source_to_code
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/hello.py", line 7
+    string1 = '
+              ^
+SyntaxError: unterminated string literal (detected at line 7)
+[2024-11-09 18:39:30 +0100] [5547] [INFO] Worker exiting (pid: 5547)
+[2024-11-09 18:39:30 +0100] [5520] [ERROR] Worker (pid:5547) exited with code 3
+[2024-11-09 18:39:30 +0100] [5520] [ERROR] Shutting down: Master
+[2024-11-09 18:39:30 +0100] [5520] [ERROR] Reason: Worker failed to boot.
+[2024-11-09 18:45:01 +0100] [5603] [INFO] Starting gunicorn 23.0.0
+[2024-11-09 18:45:01 +0100] [5603] [INFO] Listening at: http://0.0.0.0:4000 (5603)
+[2024-11-09 18:45:01 +0100] [5603] [INFO] Using worker: sync
+[2024-11-09 18:45:01 +0100] [5604] [INFO] Booting worker with pid: 5604
+[2024-11-09 18:46:36 +0100] [5603] [INFO] Handling signal: term
+[2024-11-09 18:46:40 +0100] [5604] [INFO] Worker exiting (pid: 5604)
+[2024-11-09 18:46:40 +0100] [5603] [INFO] Shutting down: Master
+[2024-11-09 18:46:46 +0100] [5614] [INFO] Starting gunicorn 23.0.0
+[2024-11-09 18:46:46 +0100] [5614] [INFO] Listening at: http://0.0.0.0:4000 (5614)
+[2024-11-09 18:46:46 +0100] [5614] [INFO] Using worker: sync
+[2024-11-09 18:46:46 +0100] [5615] [INFO] Booting worker with pid: 5615
+[2024-11-09 18:47:23 +0100] [5614] [CRITICAL] WORKER TIMEOUT (pid:5615)
+[2024-11-09 18:47:23 +0100] [5615] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2024-11-09 18:47:23 +0100] [5615] [INFO] Worker exiting (pid: 5615)
+[2024-11-09 18:47:23 +0100] [5617] [INFO] Booting worker with pid: 5617
+[2024-11-09 18:48:09 +0100] [5620] [INFO] Starting gunicorn 23.0.0
+[2024-11-09 18:48:09 +0100] [5620] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:48:09 +0100] [5620] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:48:10 +0100] [5620] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:48:10 +0100] [5620] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:48:11 +0100] [5620] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:48:11 +0100] [5620] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:48:12 +0100] [5620] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:48:12 +0100] [5620] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:48:13 +0100] [5620] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:48:13 +0100] [5620] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:48:14 +0100] [5620] [ERROR] Can't connect to ('0.0.0.0', 4000)
+[2024-11-09 18:49:02 +0100] [5624] [INFO] Starting gunicorn 23.0.0
+[2024-11-09 18:49:02 +0100] [5624] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:49:02 +0100] [5624] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:49:03 +0100] [5624] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:49:03 +0100] [5624] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:49:04 +0100] [5624] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:49:04 +0100] [5624] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:49:05 +0100] [5624] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:49:05 +0100] [5624] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:49:06 +0100] [5624] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:49:06 +0100] [5624] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:49:07 +0100] [5624] [ERROR] Can't connect to ('0.0.0.0', 4000)
+[2024-11-09 18:50:01 +0100] [5629] [INFO] Starting gunicorn 23.0.0
+[2024-11-09 18:50:01 +0100] [5629] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:50:01 +0100] [5629] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:50:02 +0100] [5629] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:50:02 +0100] [5629] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:50:03 +0100] [5629] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:50:03 +0100] [5629] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:50:04 +0100] [5629] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:50:04 +0100] [5629] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:50:05 +0100] [5629] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:50:05 +0100] [5629] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:50:06 +0100] [5629] [ERROR] Can't connect to ('0.0.0.0', 4000)
+[2024-11-09 18:50:07 +0100] [5632] [INFO] Starting gunicorn 23.0.0
+[2024-11-09 18:50:07 +0100] [5632] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:50:07 +0100] [5632] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:50:08 +0100] [5632] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:50:08 +0100] [5632] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:50:09 +0100] [5632] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:50:09 +0100] [5632] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:50:10 +0100] [5632] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:50:10 +0100] [5632] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:50:11 +0100] [5632] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:50:11 +0100] [5632] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:50:12 +0100] [5632] [ERROR] Can't connect to ('0.0.0.0', 4000)
+[2024-11-09 18:51:46 +0100] [5636] [INFO] Starting gunicorn 23.0.0
+[2024-11-09 18:51:46 +0100] [5636] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:51:46 +0100] [5636] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:51:47 +0100] [5636] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:51:47 +0100] [5636] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:51:48 +0100] [5636] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:51:48 +0100] [5636] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:51:49 +0100] [5636] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:51:49 +0100] [5636] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:51:50 +0100] [5636] [ERROR] Connection in use: ('0.0.0.0', 4000)
+[2024-11-09 18:51:50 +0100] [5636] [ERROR] connection to ('0.0.0.0', 4000) failed: [Errno 98] Address already in use
+[2024-11-09 18:51:51 +0100] [5636] [ERROR] Can't connect to ('0.0.0.0', 4000)
+[2024-11-09 18:52:11 +0100] [5614] [CRITICAL] WORKER TIMEOUT (pid:5617)
+[2024-11-09 18:52:11 +0100] [5617] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2024-11-09 18:52:11 +0100] [5617] [INFO] Worker exiting (pid: 5617)
+[2024-11-09 18:52:11 +0100] [5640] [INFO] Booting worker with pid: 5640
+[2024-11-09 18:53:06 +0100] [5614] [CRITICAL] WORKER TIMEOUT (pid:5640)
+[2024-11-09 18:53:06 +0100] [5640] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2024-11-09 18:53:06 +0100] [5640] [INFO] Worker exiting (pid: 5640)
+[2024-11-09 18:53:06 +0100] [5647] [INFO] Booting worker with pid: 5647
+[2024-11-09 18:54:33 +0100] [5614] [CRITICAL] WORKER TIMEOUT (pid:5647)
+[2024-11-09 18:54:33 +0100] [5647] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2024-11-09 18:54:33 +0100] [5647] [INFO] Worker exiting (pid: 5647)
+[2024-11-09 18:54:33 +0100] [5655] [INFO] Booting worker with pid: 5655
+[2024-11-09 18:56:24 +0100] [5614] [CRITICAL] WORKER TIMEOUT (pid:5655)
+[2024-11-09 18:56:24 +0100] [5655] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+          ^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+           ^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+        ^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/joshtaylor/apache2-docker/www/anwendungsprojekt/development/lib/python3.11/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2024-11-09 18:56:24 +0100] [5655] [INFO] Worker exiting (pid: 5655)
+[2024-11-09 18:56:24 +0100] [5666] [INFO] Booting worker with pid: 5666
+[2024-11-09 18:56:56 +0100] [5666] [INFO] Worker exiting (pid: 5666)
+[2024-11-09 18:56:56 +0100] [5614] [INFO] Handling signal: term
+[2024-11-09 18:56:56 +0100] [5614] [ERROR] Worker (pid:5666) was sent SIGTERM!
+[2024-11-09 18:56:56 +0100] [5614] [INFO] Shutting down: Master
