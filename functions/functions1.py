@@ -3,27 +3,28 @@
 from bs4 import BeautifulSoup
 import requests
 import requests.compat
-import json
-
-url = ('https://www.gummersbach.de')
-str_var = "Im Datenschutz gefundene Begriffe: "
-gefundene_items = [] 
-desired_items = [
-    'Datenschutzhinweis', 'Datenschutzbeauftragter', 'Verantwortliche Stelle', 
-    'Rechtsgrundlage', 'Rechtsgrundlage', 'Rechtsgrundlage', 'Rechtsgrundlage', 
-    'Rechtsgrundlage', 'Rechtsgrundlage', 'Rechtsgrundlage', 'Rechtsgrundlage', 
-    'Rechtsgrundlage', 'Rechtsgrundlage', 'Rechtsgrundlage', 'Rechtsgrundlage', 
-    'Datenschutzbehörde', 'Aufsichtsbehörde', 'Beschwerde', 'Datenverarbeitung', 
-    'Cookies', 'DSGVO', 'Weitergabe an Drittländer / Di', 'Datenempfänger', 
-    'Datenverarbeitungszwecke', 'genutzte Technologie', 'Dauer der Speicherung', 
-    'Löschung', 'Wideruf', 'TDDDG', 'BDSG', 'BDSG'
-]
 
 
+#url = ('https://www.rebuy.de')
+#url = ('https://www.gummersbach.de')
 
-def search_page_for_desired_link(url, *desired_terms):                     #Seite nach einem bestimmten Link durchsuchen. Bsp: 'Datenschutzerklärung' suchen: 
+# str_var = "Im Datenschutz gefundene Begriffe: "
+# gefundene_items = [] 
+# nicht_gefundene_items = []
 
-    page = requests.get(url)
+# desired_items = [
+#     'Datenschutzhinweis', 'Datenschutzbeauftragt', 'erantwortlich', '6',                #später: Datenbankabfrage
+#     '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '77', 
+#     'Datenschutzbehörde', 'Aufsichtsbehörde', 'eschwer', 'erarbeitung', 
+#     'Cookies', 'GVO', 'Dritt', 'mpfänger', 'erarbeitungszweck', 'echnologie', 
+#     'auer', 'öschung', 'ideruf', 'TDDDG', 'BDSG', 'Bundesdatenschutz'
+# ]
+
+
+
+def search_page_for_desired_link(url, *desired_terms):                     #Seite nach einem bestimmten Link durchsuchen. Bsp: nach 'Datenschutzerklärung' suchen: 
+                                                                           #desired_terms sind dabei die Suchbegriffe und url die ausgangs-URL, auf dessen Seite gesucht wird
+    page = requests.get(url)                                                #zurück kommt ein soup-element
     soup = BeautifulSoup(page.content, "html.parser")
     for link in soup.find_all('a'):
         link_str = str(link)   
@@ -39,26 +40,26 @@ def search_page_for_desired_link(url, *desired_terms):                     #Seit
             new_soup = BeautifulSoup(new_response.text, 'html.parser')
             #print(new_soup)
                          
-    return new_soup
+            return new_soup
 
 
-    #soup = BeautifulSoup(fp)
 
-def search_in_soup(soup, desired_items, str_var):
-    print(str_var)
+def search_in_soup(soup, desired_items, str_var):                           #innerhalb des soup-elements nutzen werden die schlagwörter gesucht
+    print(str_var)  
+    gefundene_items = []   #die schlagwörter, welche gefunden werden, werden im return angegeben
+    nicht_gefundene_items = []
     for item in desired_items:
         if item in str(soup):
-            print(f"{item}")           #items wurden gefunden auf website
-            gefundene_items.update({item : "gefunden"})
-        #else:
-         #   print(f"{Fore.RED}{item}{Style.RESET_ALL}")
-          #  nicht_gefundene_items.update({item : "nicht_gefunden"})
+            print(f"Gefunden: {item}")           #items wurden gefunden auf website
+            gefundene_items.append(item)
+        else:
+            print(f"NICHT gefunden: {item}")
+            nicht_gefundene_items.append(item)
+    return gefundene_items
 
 
+    soup = search_page_for_desired_link(url, "datenschutz", "datenschutzerklärung", "privacy-policy", "privacy", "policy")
 
-soup = search_page_for_desired_link(url, "datenschutz", "datenschutzerklärung")
-
-search_in_soup(soup, desired_items, str_var)
+    search_in_soup(soup, desired_items, str_var)
 
 
-print(soup)

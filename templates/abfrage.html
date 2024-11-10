@@ -6,9 +6,13 @@
     </style>
 </head>
 <body>
-    <form method="post" action="{{ url_for('process_form') }}">
+    <form method="post" action="/abfrage_verarbeitung">
         <label for="url">URL:</label>
-        <input type="text" id="url" name="url" value="{{ url }}"/>
+        <input type="text" id="url" name="url" value="url"/>
+        <br/><br/>
+        <h2>Untersuchungskontext festlegen:</h2>
+        <input type="radio" id="datenschutz" name="datenschutz" value="1" default="0"/>
+        <label for="datenschutz">Datenschutz?</label> 
         <br/><br/>
         <input type="submit" value="Absenden"/>
     </form>
