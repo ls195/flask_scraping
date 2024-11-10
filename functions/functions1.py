@@ -3,20 +3,30 @@
 from bs4 import BeautifulSoup
 import requests
 import requests.compat
-from colorama import Fore, Style
 import json
 
 url = ('https://www.gummersbach.de')
+str_var = "Im Datenschutz gefundene Begriffe: "
+gefundene_items = [] 
+desired_items = [
+    'Datenschutzhinweis', 'Datenschutzbeauftragter', 'Verantwortliche Stelle', 
+    'Rechtsgrundlage', 'Rechtsgrundlage', 'Rechtsgrundlage', 'Rechtsgrundlage', 
+    'Rechtsgrundlage', 'Rechtsgrundlage', 'Rechtsgrundlage', 'Rechtsgrundlage', 
+    'Rechtsgrundlage', 'Rechtsgrundlage', 'Rechtsgrundlage', 'Rechtsgrundlage', 
+    'Datenschutzbehörde', 'Aufsichtsbehörde', 'Beschwerde', 'Datenverarbeitung', 
+    'Cookies', 'DSGVO', 'Weitergabe an Drittländer / Di', 'Datenempfänger', 
+    'Datenverarbeitungszwecke', 'genutzte Technologie', 'Dauer der Speicherung', 
+    'Löschung', 'Wideruf', 'TDDDG', 'BDSG', 'BDSG'
+]
 
 
-def get_some_page(url, *desired_terms):                     #Seite nach einem bestimmten Link durchsuchen. Bsp: 'Datenschutzerklärung' suchen: 
-                                                            #get_some_page('https://www.covestro.com/de/company/covestro-worldwide/deutschland/', 'datenschutz', 'Datenschutz', 'DATENSCHUTZ', 'privacy', 'PRIVACY', 'Privacy')
+
+def search_page_for_desired_link(url, *desired_terms):                     #Seite nach einem bestimmten Link durchsuchen. Bsp: 'Datenschutzerklärung' suchen: 
+
     page = requests.get(url)
     soup = BeautifulSoup(page.content, "html.parser")
-    
     for link in soup.find_all('a'):
-        link_str = str(link)
-   
+        link_str = str(link)   
         if any(word in link_str for word in desired_terms):             #Datenschutz, daten schutz
             print(link_str)
             new_url = link['href']
@@ -31,9 +41,24 @@ def get_some_page(url, *desired_terms):                     #Seite nach einem be
                          
     return new_soup
 
-    #with open("https://www.rebuy.de"):
+
     #soup = BeautifulSoup(fp)
 
-get_some_page(url, "datenschutz", "datenschutzerklärung")
+def search_in_soup(soup, desired_items, str_var):
+    print(str_var)
+    for item in desired_items:
+        if item in str(soup):
+            print(f"{item}")           #items wurden gefunden auf website
+            gefundene_items.update({item : "gefunden"})
+        #else:
+         #   print(f"{Fore.RED}{item}{Style.RESET_ALL}")
+          #  nicht_gefundene_items.update({item : "nicht_gefunden"})
+
+
+
+soup = search_page_for_desired_link(url, "datenschutz", "datenschutzerklärung")
+
+search_in_soup(soup, desired_items, str_var)
+
 
 print(soup)
